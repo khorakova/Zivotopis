@@ -2,8 +2,6 @@ $c-primary: #ddcb7ef3;
 
 body {
     text-align: center;
-    max-width: 1100px;
-    margin: 0 auto;
 }
 
 h3 {
@@ -21,6 +19,13 @@ h3::after {
 }
 
 .header {
+    background-color: $c-primary;
+    min-height: 150px;
+}
+
+.hero {
+    max-width: 800px;
+    margin: 0 auto;
     position: relative;
     &__icons {
         position: absolute;
@@ -31,28 +36,36 @@ h3::after {
         justify-content: left;
     }
     &__icons-link {
-        height: 40px;
         margin: 10px 5px;
     }
-}
-
-.about-me {
-    &__hero {
-        background-color: $c-primary;
-        color: black;
+    &__icons-image {
+        height: 40px;
+        width: 40px;
     }
-    &__hero-content {
+    &__content {
         display: flex; 
         justify-content: space-around;
         align-items: center;
-        max-width: 600px;
+        max-width: 800px;
         margin: 0 auto;
     }
     &__image {
-        width: 25%;
-        border-radius: 50%;
-        padding: 20px;
+        display: none;
+        @media screen and (min-width: 600px) {
+            display: block;
+            width: 20%;
+            height: 20%;
+            border-radius: 50%;
+            padding: 20px;
+        }
     }
+    &__name {
+        margin-top: 60px;
+    }
+}
+
+
+.about-me {
     &__info {
         max-width: 800px;
         margin: 0 auto;
@@ -95,24 +108,40 @@ h3::after {
 }
 
 .course {
-    max-width: fit-content;
+    max-width: 600px;
     margin: 0 auto;
     text-align: center;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     grid-auto-rows: auto;
     gap: 10px;
+    @media screen and (min-width: 600px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: auto;
+        gap: 10px;
+    }
     &__item {
-        width: 300px;
         border: 1px solid $c-primary;
         border-radius: 5px;
         padding: 10px 20px;
     }
-    
+    &__item-title {
+        position: relative;
+    }
+    &__item-title::after {
+        position: absolute;
+        content: " ";
+        height: 1px;
+        width: 100px;
+        background-color: $c-primary;
+        top: 25px;
+        left: calc(50% - 50px);
+    }  
 }
 
 .my-work {
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 10px 20px;
 }
@@ -121,10 +150,16 @@ h3::after {
     max-width: 900px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     grid-auto-rows: auto;
     gap: 10px;
     margin-bottom: 10px;
+    @media screen and (min-width: 600px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (min-width: 850px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
     &__item {
         border-radius: 5px;
         padding: 10px;
@@ -163,5 +198,14 @@ h3::after {
     }
     &__item {
         padding: 5px;
+    }
+}
+
+.footer {
+    padding: 5px;
+    background-color: rgb(220, 219, 219);
+    &__link {
+        color: black;
+        text-decoration: none;
     }
 }
