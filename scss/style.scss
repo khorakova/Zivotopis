@@ -159,14 +159,11 @@ a:hover {
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
-    grid-auto-rows: auto;
+    grid-auto-rows: max-content;
     gap: 10px;
     margin-bottom: 10px;
     @media screen and (min-width: 600px) {
         grid-template-columns: repeat(2, 1fr);
-    }
-    @media screen and (min-width: 850px) {
-        grid-template-columns: repeat(3, 1fr);
     }
     &__item {
         border-radius: 5px;
@@ -180,9 +177,12 @@ a:hover {
     }
     &__image {
         width: 100%;
-        height: 70%;
         object-fit: cover;
     }
+}
+
+.info {
+    font-style: italic;
 }
 
 .link {
