@@ -16,6 +16,14 @@ h3::after {
   left: calc(50% - 50px);
 }
 
+a {
+  color: black;
+}
+
+a:hover {
+  color: gray;
+}
+
 .header {
   background-color: rgba(221, 203, 126, 0.9529411765);
   min-height: 150px;

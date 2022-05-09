@@ -18,6 +18,14 @@ h3::after {
     left: calc(50% - 50px);
 }
 
+a {
+    color: black;
+}
+
+a:hover {
+    color: gray;
+}
+
 .header {
     background-color: $c-primary;
     min-height: 150px;
